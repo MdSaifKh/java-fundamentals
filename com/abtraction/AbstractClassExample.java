@@ -2,6 +2,7 @@ package com.abtraction;
 abstract class Animal{
     String color;
     public Animal(String color){
+        this();
         this.color = color;
     }
     public Animal(){
@@ -14,13 +15,13 @@ abstract class Animal{
 }
 class Dog extends Animal{
     public Dog(){
-        super();
+        this("Blue");
     }
     public Dog(String color){
         super(color);
     }
     public void sound(){
-        System.out.println("Dog sound");
+        System.out.print("Dog is in color : ");
         System.out.println(this.color);
     }
 
@@ -31,8 +32,8 @@ class Dog extends Animal{
 }
 public class AbstractClassExample {
     public static void main(String [] args){
-        Animal animal = new Dog("Red");
-        animal.sound();
-        animal.walk();
+        Animal tommy = new Dog();
+        tommy.sound();
+        tommy.walk();
     }
 }
