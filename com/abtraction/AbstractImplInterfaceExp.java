@@ -16,9 +16,23 @@ class Platinum extends HDFCCreditCard{
     }
 }
 class Rupay extends HDFCCreditCard{
+    private int balance;
+    Rupay(){
+       super();
+    }
+    Rupay(int balance){
+        this.balance = balance;
+    }
     @Override
     void withdrawMoney() {
         System.out.println("Withdraw from Indian ATM");
+    }
+    void showCredentials(){
+        cardPin();
+    }
+    private void cardPin(){
+        System.out.println("123");
+        System.out.println(this.balance);
     }
 }
 public class AbstractImplInterfaceExp {
@@ -33,6 +47,8 @@ public class AbstractImplInterfaceExp {
         HDFCCreditCard rupay = new Rupay();
         rupay.payOnline();
         rupay.withdrawMoney();
+        Rupay myRupay = new Rupay(1000);
+        myRupay.showCredentials();
 
     }
 }
